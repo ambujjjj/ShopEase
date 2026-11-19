@@ -1,0 +1,126 @@
+
+.all-products-page {
+    padding: 40px 50px;
+  }
+  
+  .all-products-page h1 {
+    font-size: 32px;
+    color: #1e293b;
+    margin-bottom: 10px;
+  }
+  
+  .all-products-page > p {
+    color: #64748b;
+    margin-bottom: 30px;
+  }
+  
+  .all-products-page .product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    justify-items: center;
+  }
+  .no-products {
+    text-align: center;
+    padding: 60px 20px;
+  }
+  
+  .no-products h2 {
+    color: #1e293b;
+    margin-bottom: 10px;
+  }
+  
+  .no-products p {
+    color: #64748b;
+  }
+
+.category-filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .category-filters button {
+    padding: 10px 20px;
+    border: 1px solid #cbd5e1;
+    background: white;
+    color: #334155;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  
+  .category-filters button:hover {
+    background: #eff6ff;
+  }
+  
+  .category-filters button.active-category {
+    background: #2563eb;
+    color: white;
+    border-color: #2563eb;
+  }
+  
+.sorting-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+  
+  .sorting-section label {
+    color: #334155;
+    font-weight: 600;
+  }
+  
+  .sorting-section select {
+    padding: 9px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background-color: white;
+    color: #334155;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .sorting-section select:focus {
+    border-color: #2563eb;
+  }
+  
+@media (max-width: 1024px) {
+    .all-products-page .product-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .all-products-page {
+      padding: 30px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .all-products-page {
+      padding: 25px 15px;
+    }
+  
+    .all-products-page h1 {
+      font-size: 26px;
+    }
+  
+    .all-products-page .product-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .category-filters {
+      gap: 8px;
+    }
+  
+    .category-filters button {
+      padding: 8px 12px;
+    }
+  
+    .sorting-section {
+      flex-wrap: wrap;
+    }
+  }
+  
+  

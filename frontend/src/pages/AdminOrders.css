@@ -1,0 +1,230 @@
+
+.admin-orders {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    min-height: 65vh;
+  }
+  
+  .admin-orders-header {
+    margin-bottom: 30px;
+  }
+  
+  .admin-orders-header h1 {
+    font-size: 30px;
+    color: #222;
+    margin-bottom: 8px;
+  }
+  
+  .admin-orders-header p {
+    color: #666;
+    font-size: 16px;
+  }
+  
+  /* ORDER CARDS */
+  
+  .admin-orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .admin-order-card {
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+  }
+  
+  .admin-order-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .admin-order-top h3 {
+    color: #222;
+    font-size: 19px;
+    margin-bottom: 10px;
+  }
+  
+  .admin-order-top p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  
+  /* ORDER STATUS BADGE */
+  
+  .order-status-badge {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  
+  /* ORDERED PRODUCTS */
+  
+  .admin-order-items {
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .admin-order-items h4 {
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .admin-order-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .admin-order-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .admin-order-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 6px;
+    background-color: #f7f7f7;
+  }
+  
+  .admin-order-item p {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  
+  .admin-order-item span {
+    color: #666;
+    font-size: 14px;
+  }
+  
+  /* PAYMENT AND STATUS CONTROL */
+  
+  .admin-order-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 25px;
+    padding-top: 20px;
+  }
+  
+  .admin-order-payment p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .admin-order-payment h4 {
+    color: #222;
+    font-size: 19px;
+    margin-top: 12px;
+  }
+  
+  .admin-order-status-control {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 190px;
+  }
+  
+  .admin-order-status-control label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+  }
+  
+  .admin-order-status-control select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: white;
+    font-size: 14px;
+  }
+  
+  .admin-order-status-control select:focus {
+    outline: none;
+    border-color: #2874f0;
+  }
+  
+  .admin-order-status-control button {
+    padding: 11px 15px;
+    background-color: #2874f0;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .admin-order-status-control button:hover {
+    background-color: #1558c0;
+  }
+  
+  .admin-order-status-control button:disabled {
+    background-color: #9bb9e8;
+    cursor: not-allowed;
+  }
+  
+  /* MESSAGES */
+  
+  .admin-order-loading,
+  .admin-order-empty {
+    color: #666;
+    padding: 20px 0;
+  }
+  
+  .admin-order-error {
+    color: #dc3545;
+    background-color: #fcebec;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+  }
+  
+  .admin-order-success {
+    color: #198754;
+    background-color: #eaf7ef;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+  }
+  
+  /* RESPONSIVE DESIGN */
+  
+  @media (max-width: 700px) {
+    .admin-orders-header h1 {
+      font-size: 25px;
+    }
+  
+    .admin-order-card {
+      padding: 18px;
+    }
+  
+    .admin-order-top {
+      flex-direction: column;
+    }
+  
+    .admin-order-bottom {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .admin-order-status-control {
+      width: 100%;
+    }
+  }
+  

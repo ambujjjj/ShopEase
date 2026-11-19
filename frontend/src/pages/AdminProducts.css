@@ -1,0 +1,258 @@
+
+.admin-products {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    min-height: 65vh;
+  }
+  
+  .admin-products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .admin-products-header h1 {
+    font-size: 30px;
+    color: #222;
+    margin-bottom: 8px;
+  }
+  
+  .admin-products-header p {
+    color: #666;
+    font-size: 16px;
+  }
+  
+  /* ADD / EDIT PRODUCT FORM */
+  
+  .add-product-section {
+    background-color: #fff;
+    padding: 25px;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    margin-bottom: 35px;
+  }
+  
+  .add-product-section h2,
+  .product-list-section h2 {
+    font-size: 22px;
+    color: #222;
+    margin-bottom: 22px;
+  }
+  
+  .add-product-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .form-group label {
+    font-weight: 600;
+    color: #444;
+    font-size: 14px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    box-sizing: border-box;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #2874f0;
+  }
+  
+  .form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+  
+  .add-product-btn {
+    grid-column: 1 / -1;
+    width: fit-content;
+    background-color: #2874f0;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .add-product-btn:hover {
+    background-color: #1558c0;
+  }
+  
+  .add-product-btn:disabled {
+    background-color: #8daee5;
+    cursor: not-allowed;
+  }
+  
+  .cancel-edit-btn {
+    width: fit-content;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .cancel-edit-btn:hover {
+    background-color: #565e64;
+  }
+  
+  /* PRODUCT TABLE */
+  
+  .admin-products-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #e5e5e5;
+  }
+  
+  .admin-products-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  
+  .admin-products-table th,
+  .admin-products-table td {
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .admin-products-table th {
+    background-color: #f7f8fa;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .admin-products-table td {
+    color: #555;
+  }
+  
+  .admin-product-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 180px;
+  }
+  
+  .admin-product-info img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    border-radius: 6px;
+    background-color: #f7f7f7;
+  }
+  
+  .admin-product-info span {
+    font-weight: 500;
+    color: #222;
+  }
+  
+  /* PRODUCT ACTION BUTTONS */
+  
+  .product-action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .edit-product-btn {
+    background-color: #2874f0;
+    color: white;
+    border: none;
+    padding: 9px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .edit-product-btn:hover {
+    background-color: #1558c0;
+  }
+  
+  .delete-product-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 9px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .delete-product-btn:hover {
+    background-color: #b02a37;
+  }
+  
+  /* STATUS MESSAGES */
+  
+  .admin-loading,
+  .admin-empty {
+    color: #666;
+    padding: 20px 0;
+  }
+  
+  .admin-error {
+    color: #dc3545;
+    padding: 15px 0;
+  }
+  
+  .admin-success {
+    color: #198754;
+    background-color: #eaf7ef;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+  }
+  
+  /* RESPONSIVE DESIGN */
+  
+  @media (max-width: 650px) {
+    .admin-products-header h1 {
+      font-size: 25px;
+    }
+  
+    .add-product-form {
+      grid-template-columns: 1fr;
+    }
+  
+    .add-product-btn,
+    .cancel-edit-btn {
+      grid-column: auto;
+      width: 100%;
+    }
+  
+    .product-action-buttons {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .admin-products-table th,
+    .admin-products-table td {
+      padding: 12px;
+    }
+  }
+  

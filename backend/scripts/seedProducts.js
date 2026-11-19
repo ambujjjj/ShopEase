@@ -1,0 +1,108 @@
+
+require("dotenv").config();
+
+const mongoose = require("mongoose");
+const connectDB = require("../config/db");
+const Product = require("../models/Product");
+
+const products = [
+  {
+    name: "Wireless Headphones",
+    description: "Premium noise cancelling headphones",
+    price: 2499,
+    rating: 4.5,
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500",
+    category: "Electronics",
+    stock: 12,
+  },
+  {
+    name: "Smart Watch",
+    description: "Modern smartwatch with fitness tracking",
+    price: 3999,
+    rating: 4.3,
+    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
+    category: "Electronics",
+    stock: 8,
+  },
+  {
+    name: "Running Shoes",
+    description: "Comfortable shoes for everyday running",
+    price: 2999,
+    rating: 4.7,
+    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500",
+    category: "Fashion",
+    stock: 0,
+  },
+  {
+    name: "Camera",
+    description: "High quality camera for photography",
+    price: 15999,
+    rating: 4.8,
+    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500",
+    category: "Electronics",
+    stock: 5,
+  },
+  {
+    name: "Laptop",
+    description: "Powerful laptop for work and entertainment",
+    price: 54999,
+    rating: 4.6,
+    image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500",
+    category: "Electronics",
+    stock: 3,
+  },
+  {
+    name: "Bluetooth Speaker",
+    description: "Portable speaker with powerful bass",
+    price: 1999,
+    rating: 4.4,
+    image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500",
+    category: "Electronics",
+    stock: 15,
+  },
+  {
+    name: "Backpack",
+    description: "Stylish and spacious everyday backpack",
+    price: 1499,
+    rating: 4.2,
+    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500",
+    category: "Fashion",
+    stock: 10,
+  },
+  {
+    name: "Sunglasses",
+    description: "Trendy sunglasses with UV protection",
+    price: 999,
+    rating: 4.3,
+    image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500",
+    category: "Fashion",
+    stock: 0,
+  },
+];
+
+const seedProducts = async () => {
+  try {
+    await connectDB();
+
+    const operations = products.map((product) => ({
+      updateOne: {
+        filter: { name: product.name },
+        update: { $set: product },
+        upsert: true,
+      },
+    }));
+
+    const result = await Product.bulkWrite(operations);
+
+    console.log("Product seeding completed successfully!");
+    console.log(`Products inserted: ${result.upsertedCount}`);
+    console.log(`Products updated: ${result.modifiedCount}`);
+    console.log(`Total products processed: ${products.length}`);
+  } catch (error) {
+    console.error("Product seeding failed:", error.message);
+  } finally {
+    await mongoose.disconnect();
+  }
+};
+
+seedProducts();
